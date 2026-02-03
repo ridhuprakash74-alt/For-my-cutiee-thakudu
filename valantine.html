@@ -1,0 +1,193 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Valentine 💖</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+body {
+
+margin: 0;
+
+height: 100vh;
+
+background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+
+display: flex;
+
+justify-content: center;
+
+align-items: center;
+
+font-family: Arial, sans-serif;
+
+overflow: hidden;
+
+}
+
+.card {
+
+background: white;
+
+padding: 30px;
+
+border-radius: 20px;
+
+text-align: center;
+
+box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+
+width: 90%;
+
+max-width: 350px;
+
+position: relative;
+
+}
+
+h1 {
+
+color: #ff4d6d;
+
+margin-bottom: 25px;
+
+}
+
+button {
+
+padding: 12px 25px;
+
+font-size: 16px;
+
+border: none;
+
+border-radius: 25px;
+
+cursor: pointer;
+
+}
+
+.yes {
+
+background: #ff4d6d;
+
+color: white;
+
+}
+
+.no {
+
+background: #ddd;
+
+position: absolute;
+
+left: 20px;
+
+top: 120px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<div class="card">
+
+<h1>💘 thakudoooo, will you be my Valentine? 💘</h1>
+
+<button class="yes" onclick="yesClick()">Yes ❤️</button>
+
+<button class="no" id="noBtn">No 😢</button>
+
+</div>
+
+
+<script>
+
+const noBtn = document.getElementById("noBtn");
+
+const card = document.querySelector(".card");
+
+
+function randomMove() {
+
+const maxX = card.clientWidth - noBtn.offsetWidth;
+
+const maxY = card.clientHeight - noBtn.offsetHeight;
+
+
+const x = Math.random() * maxX;
+
+const y = Math.random() * maxY;
+
+
+noBtn.style.left = x + "px";
+
+noBtn.style.top = y + "px";
+
+}
+
+
+// No button keeps moving
+
+setInterval(randomMove, 700);
+
+
+function yesClick() {
+
+document.body.innerHTML = `
+
+<div style="
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+height:100vh;
+
+background:#ff9a9e;
+
+color:white;
+
+text-align:center;
+
+padding:20px;
+
+">
+
+<h1>💖 Yayyy akkuo! enikk ariyenu 😍💖</h1>
+
+<img
+
+src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif"
+
+alt="Dancing girl"
+
+style="width:250px; margin-top:20px; border-radius:20px;"
+
+>
+
+</div>`;
+
+}
+
+</script>
+
+
+</body>
+
+</html>
